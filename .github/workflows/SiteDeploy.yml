@@ -17,8 +17,6 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-          jekyll_src: Website
-          gem_src: Website
       - name: Deploy site
         uses: crazy-max/ghaction-github-pages@v2
         with:

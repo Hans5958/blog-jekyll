@@ -7,7 +7,15 @@ permalink: /:year/:month/:day/:title
 
 markdown: kramdown
 
-exclude: ["README.md", "CODE_OF_CONDUCT.md"]
+exclude: 
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - .github
+  
 plugins:
   - jekyll-feed
   - jekyll-archives
