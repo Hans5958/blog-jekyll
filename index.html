@@ -1,0 +1,57 @@
+---
+layout: default
+title: Index
+---
+
+<div class="index-header jumbotron">
+	<h1>Blog of Hans</h1>
+	<br />
+	<p>Welcome to my blog! This is where I will drop articles and texts that I want.</p>
+	<p>This blog is mainly built with Jekyll and Bootstrap, and it is work in progress, so stay tuned.</p>
+</div>
+
+<div class="index-posts">
+
+	<h1>Posts</h1>
+
+	{% if site.paginate %}
+	{% assign posts = paginator.posts %}
+	{% else %}
+	{% assign posts = site.posts %}
+	{% endif %}
+
+	{%- if posts.size > 0 -%}	
+
+		{%- assign date_format = site.minima.date_format | default: "%d %B %Y" -%}
+		{%- for post in posts -%}
+			<div class="post-header">
+				<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+				<div class="post-meta">{{ post.date | date: date_format }}</div>	
+			</div>
+			<div class="post-body">
+				<p>{{ post.excerpt | markdownify }} <a href="{{ post.url | relative_url }}">[read more]</a></p>
+			</div>
+			<hr />
+		{%- endfor -%}
+
+	{% if site.paginate %}
+		<div class="pager">
+		<ul class="pagination">
+		{%- if paginator.previous_page %}
+			<li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
+		{%- else %}
+			<li><div class="pager-edge">•</div></li>
+		{%- endif %}
+			<li><div class="current-page">{{ paginator.page }}</div></li>
+		{%- if paginator.next_page %}
+			<li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+		{%- else %}
+			<li><div class="pager-edge">•</div></li>
+		{%- endif %}
+		</ul>
+		</div>
+	{%- endif %}
+
+	{%- endif -%}
+
+</div>

@@ -1,0 +1,26 @@
+title: "Hans' Blog"
+email: ""
+description: "This is a blog."
+baseurl: ""
+url: ""
+permalink: /:year/:month/:day/:title
+
+markdown: kramdown
+
+exclude: ["README.md", "CODE_OF_CONDUCT.md"]
+plugins:
+  - jekyll-feed
+  - jekyll-archives
+
+jekyll-archives:
+  enabled: 
+    - year
+    - month
+    - tags
+    - categories
+  layout: archive
+  permalinks:
+    year: '/:year/'
+    month: '/:year/:month/'
+    tag: '/tag/:name/'
+    category: '/category/:name/'

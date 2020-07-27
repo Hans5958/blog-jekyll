@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<h1 class="archive-title">Archive <small>
+{% case page.type %}
+	{% when "year" %} 
+		{{ page.date | date: "%Y" }}
+	{% when "month" %} 
+		{{ page.date | date: "%B %Y" }}
+	{% when "day" %} 
+		{{ page.date | date: "%d %B %Y" }}
+	{% else %}
+		{{ page.type | capitalize }}: {{ page.title }}
+{% endcase %} 
+</small></h1>
+
+{%- assign date_format = site.minima.date_format | default: "%d %B %Y" -%}
+{% for post in page.posts %}
+	<div class="post-header">
+		<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+		<div class="post-meta">{{ post.date | date: date_format }}</div>	
+	</div>
+	<div class="post-body">
+		<p>{{ post.excerpt | markdownify }} <a href="{{ post.url | relative_url }}"></a></p>
+	</div>
+	<hr />
+{% endfor %}

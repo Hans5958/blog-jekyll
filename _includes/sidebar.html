@@ -1,0 +1,25 @@
+<h2>Recent posts</h2>
+
+<ul>
+	{%- for post in site.posts limit: 5 -%}	
+		<li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+	{%- endfor -%}
+</ul>
+
+<hr />
+
+<h2>Categories</h2>
+
+<ul>
+	{%- for category in site.categories -%}	
+		<li><a href="./category/{{ category | first }}">{{ category | first }}</a></li>
+	{%- endfor -%}
+</ul>
+
+<hr />
+
+<h2>Tags</h2>
+
+{%- for tag in site.tags -%}	
+	<span><a href="./tag/{{ tag | first }}">{{ tag | first }}</a> </span>
+{%- endfor -%}
