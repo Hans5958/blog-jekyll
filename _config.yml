@@ -1,11 +1,11 @@
-title: "Hans' Blog"
+title: "Blog of Hans"
 email: ""
 description: "This is a blog."
 baseurl: ""
 url: ""
 permalink: /:year/:month/:day/:title
 
-markdown: kramdown
+markdown: CommonMark
 
 exclude: 
   - Gemfile
@@ -15,6 +15,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .github
+  - import
   
 plugins:
   - jekyll-feed
@@ -28,7 +29,24 @@ jekyll-archives:
     - categories
   layout: archive
   permalinks:
-    year: '/:year/'
-    month: '/:year/:month/'
-    tag: '/tag/:name/'
-    category: '/category/:name/'
+    year: /:year/
+    month: /:year/:month/
+    tag: /tag/:name/
+    category: /category/:name/
+
+sass:
+  # sass_dir: assets/_sass
+  style: compressed
+
+commonmark:
+  options: ["SMART", "FOOTNOTES"]
+  extensions: ["strikethrough", "autolink", "table"]
+
+pagination:
+  enabled: true
+  debug: false
+  collection: 'posts'
+  per_page: 10
+  permalink: '/page/:num/'
+  sort_reverse: true
+  title: ':title - page :num'
