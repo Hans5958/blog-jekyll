@@ -26,13 +26,21 @@ pagination:
 
 		{%- assign date_format = site.minima.date_format | default: "%d %B %Y" -%}
 		{% for post in paginator.posts %}
-			<div class="post-header">
-				<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-				<div class="post-meta">{{ post.date | date: date_format }}</div>	
-			</div>
-			<div class="post-body">
-				<p>{{ post.excerpt | markdownify }} <a href="{{ post.url | relative_url }}">[read more]</a></p>
-			</div>
+			<article class="post-header">
+				<header class="post-header">
+					<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+					<p class="post-meta">
+						{%- assign date_format = "%d %B %Y" -%}
+						<time class="post-date-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+							{{ page.date | date: date_format }}
+						</time>
+					</p>
+				</div>
+				<div class="post-body">
+					{{ post.excerpt | markdownify }}
+					<p><a href="{{ post.url | relative_url }}">[read more]</a></p>
+				</header>
+			</article>
 			<hr />
 		{% endfor %}
 
