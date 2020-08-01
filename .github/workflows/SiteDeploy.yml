@@ -23,5 +23,6 @@ jobs:
           target_branch: gh-pages
           build_dir: _site
           jekyll: false
+          fqdn: blog.hans5958.me
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
