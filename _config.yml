@@ -50,3 +50,13 @@ pagination:
   permalink: '/page/:num/'
   sort_reverse: true
   title: ':title - page :num'
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      categories: Uncategorized
+      tags: en

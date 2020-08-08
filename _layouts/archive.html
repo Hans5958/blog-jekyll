@@ -1,5 +1,7 @@
 ---
 layout: default
+pagination: 
+  enabled: true
 ---
 
 <h1 class="archive-title">Archive <small>
@@ -15,14 +17,80 @@ layout: default
 {% endcase %} 
 </small></h1>
 
-{%- assign date_format = site.minima.date_format | default: "%d %B %Y" -%}
-{% for post in page.posts %}
-	<div class="post-header">
-		<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
-		<div class="post-meta">{{ post.date | date: date_format }}</div>	
-	</div>
-	<div class="post-body">
-		<p>{{ post.excerpt | markdownify }} <a href="{{ post.url | relative_url }}"></a></p>
-	</div>
-	<hr />
-{% endfor %}
+{% if site.paginate %}
+{% assign posts = paginator.posts %}
+{% else %}
+{% assign posts = page.posts %}
+{% endif %}
+
+{%- if posts.size > 0 -%}	
+
+	{%- assign date_format = site.minima.date_format | default: "%d %B %Y" -%}
+	{% for post in posts %}
+		<article class="post-header">
+			<header class="post-header">
+				<h2><a class="post-title-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h2>
+				<p class="post-meta">
+					{%- assign date_format = "%d %B %Y" -%}
+					<time class="post-date-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+						{{ page.date | date: date_format }}
+					</time>
+				</p>
+			</header>
+			<div class="post-body">
+				{{ post.excerpt | markdownify }}
+				<p><a href="{{ post.url | relative_url }}">[read more]</a></p>
+			</div>
+		</article>
+		<hr />
+	{% endfor %}
+
+	{% if paginator.total_pages > 1 %}
+		<nav>
+			<ul class="pagination">
+				<li class="page-item {% if paginator.first_page == paginator.page %} disabled {% endif %}">
+					<a class="page-link" href="{{ paginator.previous_page_path | relative_url }}" tabindex="-1">Previous</a>
+				</li>
+				{% for i in (1..paginator.total_pages) %}
+					{% capture page_href %}{{ paginator.first_page_path | relative_url }}{% if i != 1 %}page/{{ i }}/{% endif %}{% endcapture %}
+					{% if i == paginator.page %}
+						<li class="page-item active"><a class="page-link" href="{{ page_href }}">{{ i }}<span class="sr-only">(current)</span></a></li>
+					{% else %}
+						<li class="page-item"><a class="page-link" href="{{ page_href }}">{{ i }}</a></li>
+					{% endif %}
+				{% endfor %}
+				<li class="page-item {% if paginator.last_page == paginator.page %} disabled {% endif %}">
+					<a class="page-link" href="{{ paginator.next_page_path | relative_url }}" tabindex="-1">Next</a>
+				</li>
+			<!-- <ul class="pagination">
+			<li class="page-item disabled">
+				<a class="page-link" href="#" tabindex="-1">Previous</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active">
+				<a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+				<li class="page-item">
+					<a class="page-link" href="#">Next</a>
+				</li>  -->
+			</ul>
+		</nav>
+		<!-- <div class="pager">
+		<ul class="pagination">
+		{%- if paginator.previous_page %}
+			<li><a href="{{ paginator.previous_page_path | relative_url }}" class="previous-page">{{ paginator.previous_page }}</a></li>
+		{%- else %}
+			<li><div class="pager-edge">•</div></li>
+		{%- endif %}
+			<li><div class="current-page">{{ paginator.page }}</div></li>
+		{%- if paginator.next_page %}
+			<li><a href="{{ paginator.next_page_path | relative_url }}" class="next-page">{{ paginator.next_page }}</a></li>
+		{%- else %}
+			<li><div class="pager-edge">•</div></li>
+		{%- endif %}
+		</ul>
+		</div> -->
+	{%- endif %}
+
+{%- endif -%}
