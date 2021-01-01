@@ -4,7 +4,7 @@ gem "jekyll", "~> 3.9.0"
 # gem "github-pages", group: :jekyll_plugins
 group :jekyll_plugins do
   gem "jekyll-archives"
-  gem "jekyll-commonmark"
+  # gem "jekyll-commonmark"
   gem "jekyll-paginate-v2"
   gem 'jekyll-commonmark-ghpages'
   # gem 'github-pages-health-check', '1.16.1'

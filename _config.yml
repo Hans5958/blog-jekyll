@@ -1,11 +1,15 @@
-title: "Blog of Hans"
-email: ""
-description: "This is a blog."
-baseurl: ""
-url: ""
+title: Blog of Hans
+description: This is a blog.
+baseurl: /blog
+url: https://hans5958.github.io
 permalink: /:year/:month/:day/:title
 
-markdown: CommonMark
+author: Hans5958
+twitter: "@Hans5958"
+copyright_year: 2021
+repository: https://github.com/Hans5958/blog
+
+markdown: CommonMarkGhPages
 
 exclude: 
   - Gemfile
@@ -16,7 +20,9 @@ exclude:
   - vendor/ruby/
   - .github
   - import
-  
+
+livereload: true
+
 plugins:
   - jekyll-feed
   - jekyll-archives
