@@ -19,7 +19,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - .github
-  - import
+  - draft_temp
 
 livereload: true
 
@@ -64,5 +64,3 @@ defaults:
       type: posts
     values:
       layout: post
-      categories: Uncategorized
-      tags: en
