@@ -26,6 +26,7 @@ livereload: true
 plugins:
   - jekyll-feed
   - jekyll-archives
+  - jekyll-git_metadata
 
 jekyll-archives:
   enabled: 
@@ -64,3 +65,7 @@ defaults:
       type: posts
     values:
       layout: post
+
+jekyll-minifier:
+  uglifier_args:
+    harmony: true

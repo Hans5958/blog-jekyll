@@ -19,6 +19,8 @@ group :jekyll_plugins do
   gem 'jekyll-relative-links'
   gem 'jekyll-optional-front-matter'
   gem 'jekyll-default-layout'
+  gem 'jekyll-git_metadata'
+  gem 'jekyll-minifier'
 end
 install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
   gem "tzinfo", "~> 1.2"

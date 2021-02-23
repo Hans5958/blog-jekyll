@@ -13,16 +13,20 @@ GEM
     commonmarker (0.17.13)
       ruby-enum (~> 0.5)
     concurrent-ruby (1.1.7)
+    cssminify2 (2.0.1)
     em-websocket (0.5.2)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.6.0)
     eventmachine (1.2.7)
+    execjs (2.7.0)
+    ffi (1.14.2)
     ffi (1.14.2-x64-mingw32)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
     html-pipeline (2.14.0)
       activesupport (>= 2)
       nokogiri (>= 1.4)
+    htmlcompressor (0.4.0)
     http_parser.rb (0.6.0)
     i18n (0.9.5)
       concurrent-ruby (~> 1.0)
@@ -52,6 +56,14 @@ GEM
       jekyll (>= 3.0, < 5.0)
     jekyll-feed (0.15.1)
       jekyll (>= 3.7, < 5.0)
+    jekyll-git_metadata (0.2.0)
+      jekyll (~> 3.0)
+    jekyll-minifier (0.1.10)
+      cssminify2 (~> 2.0)
+      htmlcompressor (~> 0.4)
+      jekyll (>= 3.5)
+      json-minify (~> 0.0.3)
+      uglifier (~> 4.1)
     jekyll-optional-front-matter (0.3.2)
       jekyll (>= 3.0, < 5.0)
     jekyll-paginate-v2 (3.0.0)
@@ -72,6 +84,9 @@ GEM
       gemoji (~> 3.0)
       html-pipeline (~> 2.2)
       jekyll (>= 3.0, < 5.0)
+    json (2.5.1)
+    json-minify (0.0.3)
+      json (> 0)
     kramdown (2.3.0)
       rexml
     liquid (4.0.3)
@@ -79,8 +94,14 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.3.6)
+    mini_portile2 (2.5.0)
     minitest (5.14.3)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
     nokogiri (1.11.1-x64-mingw32)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
       racc (~> 1.4)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -104,11 +125,15 @@ GEM
       thread_safe (~> 0.1)
     tzinfo-data (1.2020.6)
       tzinfo (>= 1.0.0)
+    uglifier (4.2.0)
+      execjs (>= 0.3.0, < 3)
     wdm (0.1.1)
     zeitwerk (2.4.2)
 
 PLATFORMS
+  ruby
   x64-mingw32
+  x86_64-linux
 
 DEPENDENCIES
   jekyll (~> 3.9.0)
@@ -116,6 +141,8 @@ DEPENDENCIES
   jekyll-commonmark-ghpages
   jekyll-default-layout
   jekyll-feed
+  jekyll-git_metadata
+  jekyll-minifier
   jekyll-optional-front-matter
   jekyll-paginate-v2
   jekyll-redirect-from
