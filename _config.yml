@@ -9,8 +9,6 @@ twitter: "@Hans5958"
 copyright_year: 2021
 repository: https://github.com/Hans5958/blog
 
-markdown: CommonMarkGhPages
-
 exclude: 
   - Gemfile
   - Gemfile.lock
@@ -22,11 +20,21 @@ exclude:
   - draft_temp
 
 livereload: true
+markdown: CommonMarkGhPages
 
 plugins:
-  - jekyll-feed
   - jekyll-archives
+  - jekyll-paginate-v2
+  - jekyll-commonmark-ghpages
+  - jekyll-redirect-from   
+  - jekyll-sitemap
+  - jekyll-last-modified-at
+  - jekyll-feed
+  - jekyll-relative-links
+  - jekyll-default-layout
   - jekyll-git_metadata
+  - jekyll-minifier
+  - jekyll-autoprefixer
 
 jekyll-archives:
   enabled: 
@@ -65,6 +73,19 @@ defaults:
       type: posts
     values:
       layout: post
+
+autoprefixer:
+  browsers:
+  - ">= 1%"
+  - last 1 major version
+  - not dead
+  - Chrome >= 60
+  - Firefox >= 60
+  - Edge >= 16
+  - iOS >= 10
+  - Safari >= 10
+  - Android >= 6
+  - not Explorer <= 11
 
 jekyll-minifier:
   uglifier_args:

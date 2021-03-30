@@ -1,29 +1,28 @@
+# Batch command: 
+# del /f /s /q Gemfile.lock && bundle install && bundle lock --add-platform ruby x86_64-linux
+
 source "https://rubygems.org"
-gem "jekyll", "~> 3.9.0"
-# gem "minima", "~> 2.5"
-# gem "github-pages", group: :jekyll_plugins
+
+gem "jekyll", "~> 3.9.0" # stuck since using 3.9.0 plugins
 group :jekyll_plugins do
   gem "jekyll-archives"
-  # gem "jekyll-commonmark"
   gem "jekyll-paginate-v2"
-  gem 'jekyll-commonmark-ghpages'
-  # gem 'github-pages-health-check', '1.16.1'
-  gem 'jekyll-redirect-from'   
-  gem 'jekyll-sitemap'
-  gem 'jekyll-feed'
-  gem 'jekyll-seo-tag'
-  # gem 'jekyll-github-metadata'
-  # gem 'jekyll-avatar'
-  # gem 'jekyll-remote-theme'
-  gem 'jemoji'
-  gem 'jekyll-relative-links'
-  gem 'jekyll-optional-front-matter'
-  gem 'jekyll-default-layout'
-  gem 'jekyll-git_metadata'
-  gem 'jekyll-minifier'
+  gem "jekyll-commonmark-ghpages"
+  gem "jekyll-redirect-from"   
+  gem "jekyll-sitemap"
+  gem "jekyll-last-modified-at"
+  gem "jekyll-feed"
+  gem "jekyll-relative-links"
+  gem "jekyll-default-layout"
+  gem "jekyll-git_metadata"
+  gem "jekyll-minifier"
+  gem "jekyll-autoprefixer"
 end
-install_if -> { RUBY_PLATFORM =~ %r!mingw|mswin|java! } do
+platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", "~> 1.2"
   gem "tzinfo-data"
 end
-gem "wdm", "~> 0.1.0", :install_if => Gem.win_platform?
+gem "wdm", "~> 0.1.1", :platforms => [:mingw, :x64_mingw, :mswin]
+
+# Hotfix to avoid using "eventmachine (1.2.7-x64-mingw32)" which makes errors on Windows.
+gem "eventmachine", "1.2.7", git: "https://github.com/eventmachine/eventmachine.git", tag: "v1.2.7"
