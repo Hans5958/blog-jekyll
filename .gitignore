@@ -1,5 +1,6 @@
-_site
-.sass-cache
-.jekyll-metadata
-.vscode
-draft_temp
+_site/
+.vscode/
+**/.jekyll-metadata
+.git-metadata/
+.sass-cache/
+.jekyll-cache/
