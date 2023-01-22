@@ -6,11 +6,13 @@ on:
     branches:
       - master
     paths:
-      - .github/workflows/deploy-site.yml
-      - assets/**
+      - .github/workflows/SiteDeploy.yml
+      - _includes/**
+      - _layouts/**
       - _posts/**
-      - */**.html
-      - */**.md
+      - assets/**
+      - "*/**.html"
+      - "*/**.md"
       - Gemfile
       - Gemfile.lock
       - _config.yml
