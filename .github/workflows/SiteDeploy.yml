@@ -1,27 +1,59 @@
-on: push
-
 name: Site Deployment
 
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/deploy-site.yml
+      - assets/**
+      - _posts/**
+      - */**.html
+      - */**.md
+      - Gemfile
+      - Gemfile.lock
+      - _config.yml
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  deploy:
-    name: Deployment
-    runs-on: windows-latest
+  build:
+    name: Build
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.6
+          ruby-version: 2.7.5
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v2
       - name: Build site
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-      - name: Deploy site
-        uses: crazy-max/ghaction-github-pages@v2
-        with:
-          target_branch: gh-pages
-          build_dir: _site
-          jekyll: false
+          jekyll_src: site
+          custom_opts: --config _config.yml --trace
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          JEKYLL_ENV: production
+      - name: Upload GH Pages artifact
+        uses: actions/upload-pages-artifact@v1
+
+  deploy:
+    name: Deployment
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1
