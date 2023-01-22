@@ -2,7 +2,7 @@ title: Blog of Hans
 description: This is a blog.
 baseurl: /blog
 url: https://hans5958.github.io
-permalink: /:year/:month/:day/:title
+permalink: /:title
 
 author: Hans5958
 twitter: "@Hans5958"
@@ -21,6 +21,7 @@ exclude:
 
 livereload: true
 markdown: CommonMarkGhPages
+future: true
 
 plugins:
   - jekyll-archives
@@ -35,6 +36,7 @@ plugins:
   - jekyll-git_metadata
   - jekyll-minifier
   - jekyll-autoprefixer
+  - jekyll-toc
 
 jekyll-archives:
   enabled: 
@@ -54,7 +56,7 @@ sass:
   style: compressed
 
 commonmark:
-  options: ["SMART", "FOOTNOTES"]
+  options: ["SMART", "FOOTNOTES", "UNSAFE"]
   extensions: ["strikethrough", "autolink", "table"]
 
 pagination:
@@ -73,6 +75,7 @@ defaults:
       type: posts
     values:
       layout: post
+      toc: true
 
 autoprefixer:
   browsers:
@@ -90,3 +93,9 @@ autoprefixer:
 jekyll-minifier:
   uglifier_args:
     harmony: true
+
+toc:
+  min_level: 1
+  max_level: 7
+  list_class: toc-sub
+  sublist_class: toc-sublist

@@ -6,16 +6,18 @@ source "https://rubygems.org"
 gem "jekyll", "~> 3.9.0" # stuck since using 3.9.0 plugins
 group :jekyll_plugins do
   gem "jekyll-archives"
-  gem "jekyll-paginate-v2"
-  gem "jekyll-commonmark-ghpages"
   gem "jekyll-redirect-from"   
   gem "jekyll-sitemap"
   gem "jekyll-last-modified-at"
   gem "jekyll-feed"
   gem "jekyll-relative-links"
   gem "jekyll-default-layout"
-  gem "jekyll-git_metadata"
   gem "jekyll-minifier"
+  gem "jekyll-toc"
+  # 3 only
+  gem "jekyll-paginate-v2"
+  gem "jekyll-commonmark-ghpages"
+  gem "jekyll-git_metadata"
   gem "jekyll-autoprefixer" 
 end
 platforms :mingw, :x64_mingw, :mswin, :jruby do

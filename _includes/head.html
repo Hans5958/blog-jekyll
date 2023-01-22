@@ -12,6 +12,10 @@
 <meta property="og:description" content="{{ page.description }}">
 <meta property="og:site_name" content="{{ site.title }}" />
 <meta property="og:locale" content="en_US" />
+{% if page.cover_image %}
+<meta property="og:image" content="{{ page.cover_image | relative_url }}" />
+<meta property="og:image:alt" content="{{ page.cover_image_alt }}" />
+{% endif %}
 
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="{{ site.twitter }}" />
@@ -19,6 +23,10 @@
 <meta name="twitter:url" content="{{ page.url | absolute_url }}" />
 <meta name="twitter:title" content="{% if page.title and page.title != 'Index' %}{{ page.title }} - {% endif %}{{ site.title }}" />
 <meta name="twitter:description" content="{{ page.description }}" />
+{% if page.cover_image %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:image" content="{{ page.cover_image | relative_url }}" />
+{% endif %}
 
 <!-- Require Script and Loading Page -->
 

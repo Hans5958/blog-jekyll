@@ -5,6 +5,8 @@ date: 2018-08-20 20:33:50 +0700
 category: Article
 tags: en 
 slug: minecraft-hd-heads
+redirect_from: 
+  - /2018/08/20/minecraft-hd-heads
 ---
 
 So, my friend has successfully invented the so-called Minecraft HD Heads. It's just a simple Minecraft head, but the quality is upscaled, that it's not like "pixelated" anymore. He tells that he could give the steps to do to get it, but I want to try to do it by myself, without any help. I want this as a challenge, something to fill my boredom. 

@@ -3,7 +3,7 @@ layout: default
 ---
 
 <article itemscope itemtype="http://schema.org/BlogPosting">
-	<header class="post-header">
+	<header class="post-header mb-3">
 		<h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
 		<p class="post-meta">
 			{%- assign date_format = "%d %B %Y" -%}
@@ -12,6 +12,12 @@ layout: default
 			</time>
 		</p>
 	</header>
+	{% if page.cover_image %}
+		<img itemprop="image" class="mb-3" src="{{ page.cover_image | relative_url }}" alt="{{ page.cover_image_alt }}" />
+	{% endif %}
+	<div class="toc card pt-3 mb-3">
+		{% toc %}
+	</div>
 	<div class="post-body" itemprop="articleBody">
 		{{ content }}
 	</div>
