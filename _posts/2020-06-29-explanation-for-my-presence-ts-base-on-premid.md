@@ -1,10 +1,10 @@
 ---
-layout: post
 title: Explanation for my presence.ts base on PreMiD
 date: 2020-06-29 09:26 +0000
 categories: Article
 tags: en programming
 slug: explanation-for-my-presence-ts-base-on-premid
+description: Hello, and welcome to my explanation for my base/template on presence.ts. You might be wondering either how this works or why this thing complicated. In this explanation text, I will guide you how I came with the base that I made, and consequently, solve this systematic problem that a lot of developers do, as I could say.
 excerpt: Hello, and welcome to my explanation for my base/template on ``presence.ts``. You might be wondering either how this works or why this thing complicated. In this explanation text, I will guide you how I came with the base that I made, and consequently, solve this systematic problem that a lot of developers do, as I could say.
 redirect_from: 
   - /2020/06/29/explanation-for-my-presence-ts-base-on-premid

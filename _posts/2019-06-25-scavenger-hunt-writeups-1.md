@@ -1,10 +1,10 @@
 ---
-layout: post
 title: 'Scavenger Hunt Writeups - ChillZone, June 2019'
 date: 2019-06-25 20:08:41 +0700
 category: Article
 tags: en old-blog
 slug: scavenger-hunt-writeups-1
+description: Hey, I decided to start a series of post. I call this series "Scavenger Hunt Writeups". I do this because I’m bored and I like scavenger hunts. This includes those mini-ARG that hosted by some random Discord server. I will do this in a relaxing tone, not as technical as when someone found a critical zero-day exploit. This is the first post, hope you like it.
 redirect_from: 
   - /2019/06/25/scavenger-hunt-writeups-1
 ---
