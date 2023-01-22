@@ -38,7 +38,6 @@ jobs:
         uses: limjh16/jekyll-action-ts@v2
         with:
           enable_cache: true
-          jekyll_src: site
           custom_opts: --config _config.yml --trace
         env:
           JEKYLL_ENV: production
