@@ -3,7 +3,7 @@ layout: post
 title: "Let's talk about Minecraft"
 date: 2018-02-28 21:24:08 +0700
 category: Article
-tags: en 
+tags: en old-blog
 slug: lets-talk-about-minecraft
 redirect_from: 
   - /2018/02/28/lets-talk-about-minecraft

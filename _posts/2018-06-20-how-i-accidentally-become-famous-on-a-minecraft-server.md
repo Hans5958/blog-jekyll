@@ -3,7 +3,7 @@ layout: post
 title: 'How I accidentally become famous on a Minecraft server'
 date: 2018-06-20 21:31:09 +0700
 category: Article
-tags: en 
+tags: en old-blog
 slug: how-i-accidentally-become-famous-on-a-minecraft-server
 redirect_from: 
   - /2018/06/20/how-i-accidentally-become-famous-on-a-minecraft-server

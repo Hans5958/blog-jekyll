@@ -3,7 +3,7 @@ layout: post
 title: 'Cracking the mystery of Minecraft HD Heads, alone'
 date: 2018-08-20 20:33:50 +0700
 category: Article
-tags: en 
+tags: en old-blog project
 slug: minecraft-hd-heads
 redirect_from: 
   - /2018/08/20/minecraft-hd-heads
@@ -38,7 +38,7 @@ Here, I have a Twitter logo that I put at the head. I upscaled the texture from 
 
 Then, I put it on my resource pack, and, as I expected, it works. 
 
-![hdheads-2.png](/assets/img/minecraft-hd-heads/2.png" | relative_url }}) 
+![hdheads-2.png](/blog/assets/img/minecraft-hd-heads/2.png" | relative_url }}) 
 
 So, this part is simple, you upscale the skin, put the image, and then voila.
 
@@ -52,19 +52,19 @@ Then, I use the Minecraft uploader to upload my skin, and then do some things to
 
 After lots of despair, I finally looked at the HD Head, and I found the way. It actually uses the [Minecraft: Education Edition](http://education.minecraft.net) website, that is under the minecraft.net domain. 
 
-![hdheads-3.PNG]({{ "/assets/img/minecraft-hd-heads/3.png) 
+![hdheads-3.PNG](/blog/assets/img/minecraft-hd-heads/3.png) 
 
 After some clicky-clicks in here and there, I finally get the skin there and use it for the skin, and changed the URL into mine. 
 
-![hdheads-4.png](/assets/img/minecraft-hd-heads/4.png) 
+![hdheads-4.png](/blog/assets/img/minecraft-hd-heads/4.png) 
 
 On NBTExplorer, I changed the texture using the base64 that's generated, and then changed the UUID into something else. 
 
-![hdheads-5.png](/assets/img/minecraft-hd-heads/5.png) 
+![hdheads-5.png](/blog/assets/img/minecraft-hd-heads/5.png) 
 
 Okay, testing time. Ah, it works! Finally! Oh yeah, I uploaded the bigger version. 
 
-![hdheads-6.png](/assets/img/minecraft-hd-heads/6.png" | relative_url }})
+![hdheads-6.png](/blog/assets/img/minecraft-hd-heads/6.png" | relative_url }})
 
 ## Final Words
 

@@ -3,7 +3,7 @@ layout: post
 title: 'Scavenger Hunt Writeups - ChillZone, June 2019'
 date: 2019-06-25 20:08:41 +0700
 category: Article
-tags: en 
+tags: en old-blog
 slug: scavenger-hunt-writeups-1
 redirect_from: 
   - /2019/06/25/scavenger-hunt-writeups-1
