@@ -1,13 +1,13 @@
 title: Blog of Hans
 description: This is a blog.
-baseurl: /blog
+baseurl: /blog-jekyll
 url: https://hans5958.github.io
 permalink: /:title
 
 author: Hans5958
 twitter: "@Hans5958"
 copyright_year: 2023
-repository: https://github.com/Hans5958/blog
+repository: https://github.com/Hans5958/blog-jekyll
 
 exclude: 
   - Gemfile
